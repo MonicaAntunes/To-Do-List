@@ -1,6 +1,6 @@
 package br.com.todoList.service;
 
-import br.com.todoList.model.Tasks;
+import br.com.todoList.repository.model.Tasks;
 import br.com.todoList.repository.ToDoRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;

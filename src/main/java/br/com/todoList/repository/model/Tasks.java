@@ -1,4 +1,4 @@
-package br.com.todoList.model;
+package br.com.todoList.repository.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,6 +26,16 @@ public class Tasks {
 
     public Tasks() {
 
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
     public Long getId() {

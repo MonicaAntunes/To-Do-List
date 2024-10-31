@@ -1,6 +1,6 @@
 package br.com.todoList.repository;
 
-import br.com.todoList.model.Tasks;
+import br.com.todoList.repository.model.Tasks;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
