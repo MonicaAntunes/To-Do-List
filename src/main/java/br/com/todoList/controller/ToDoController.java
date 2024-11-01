@@ -1,5 +1,6 @@
 package br.com.todoList.controller;
 
+import br.com.todoList.dto.TasksDto;
 import br.com.todoList.repository.model.Tasks;
 import br.com.todoList.service.ToDoService;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -24,22 +25,22 @@ public class ToDoController {
     }
 
     @PostMapping
-    public Tasks createTask(@RequestBody Tasks tasks) {
-        return service.createTask(tasks);
+    public TasksDto createTask(@RequestBody TasksDto tasksDto) {
+        return service.createTask(tasksDto);
     }
 
     @PutMapping("/{id}")
-    public Optional<Tasks> updateTask(@PathVariable Long id, @RequestBody Tasks tasks) {
-        return service.updateTask(id, tasks);
+    public Optional<TasksDto> updateTask(@PathVariable Long id, @RequestBody TasksDto tasksDto) {
+        return service.updateTask(id, tasksDto);
     }
 
     @GetMapping("/{id}")
-    public Optional<Tasks> listOneTask(@PathVariable Long id) {
+    public Optional<TasksDto> listOneTask(@PathVariable Long id) {
         return service.listOneTask(id);
     }
 
     @GetMapping
-    public List<Tasks> listAllTasks() {
+    public List<TasksDto> listAllTasks() {
         return service.listAllTasks();
     }
 
