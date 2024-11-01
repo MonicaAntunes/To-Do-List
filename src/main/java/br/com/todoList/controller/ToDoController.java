@@ -1,7 +1,6 @@
 package br.com.todoList.controller;
 
 import br.com.todoList.dto.TasksDto;
-import br.com.todoList.repository.model.Tasks;
 import br.com.todoList.service.ToDoService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,5 +1,6 @@
 package br.com.todoList.repository.model;
 
+import br.com.todoList.dto.TasksDto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,6 +27,15 @@ public class Tasks {
 
     public Tasks() {
 
+    }
+
+    public static TasksDto fromTasksToTasksDto(Tasks tasks) {
+        return new TasksDto(
+                tasks.getName(),
+                tasks.getDescription(),
+                tasks.isRealized(),
+                tasks.getPriority()
+        );
     }
 
     @Override

@@ -1,5 +1,6 @@
 package br.com.todoList.service;
 
+import br.com.todoList.dto.TasksDto;
 import br.com.todoList.repository.model.Tasks;
 import br.com.todoList.repository.ToDoRepository;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,8 @@ public class ToDoService {
         this.toDoRepository = toDoRepository;
     }
 
-    public Tasks createTask(Tasks tasks) {
+    public Tasks createTask(TasksDto tasksDto) {
+        Tasks tasks = TasksDto.fromTasksDtoToTasks(tasksDto);
         return toDoRepository.save(tasks);
     }
 

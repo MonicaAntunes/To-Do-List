@@ -1,5 +1,7 @@
 package br.com.todoList.dto;
 
+import br.com.todoList.repository.model.Tasks;
+
 public class TasksDto {
     private String name;
     private String description;
@@ -21,6 +23,15 @@ public class TasksDto {
     @Override
     public String toString() {
         return super.toString();
+    }
+
+    public static Tasks fromTasksDtoToTasks(TasksDto tasksDto) {
+        return new Tasks(
+                tasksDto.getName(),
+                tasksDto.getDescription(),
+                tasksDto.isRealized(),
+                tasksDto.getPriority()
+        );
     }
 
     public String getName() {
