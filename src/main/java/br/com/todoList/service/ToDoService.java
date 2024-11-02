@@ -7,6 +7,7 @@ import br.com.todoList.repository.ToDoRepository;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ToDoService {
@@ -43,10 +44,10 @@ public class ToDoService {
 
     public List<TasksDto> listAllTasks() {
         List<Tasks> tasksList = toDoRepository.findAll();
-        List<TasksDto> tasksDtoList = tasksList
+        return tasksList
                 .stream()
-                .map(task -> TasksDto.fromTasksDtoToTasks(task));
-        return ;
+                .map(Tasks::fromTasksToTasksDto)
+                .collect(Collectors.toList());
     }
 
     public void deleteOneTask(Long id) {
