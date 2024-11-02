@@ -1,6 +1,7 @@
 package br.com.todoList.controller;
 
 import br.com.todoList.dto.TasksDto;
+import br.com.todoList.exceptions.TaskNotFoundException;
 import br.com.todoList.service.ToDoService;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,13 +24,13 @@ public class ToDoController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping("/")
     public TasksDto createTask(@RequestBody TasksDto tasksDto) {
         return service.createTask(tasksDto);
     }
 
     @PutMapping("/{id}")
-    public Optional<TasksDto> updateTask(@PathVariable Long id, @RequestBody TasksDto tasksDto) {
+    public Optional<TasksDto> updateTask(@PathVariable Long id, @RequestBody TasksDto tasksDto) throws TaskNotFoundException {
         return service.updateTask(id, tasksDto);
     }
 
